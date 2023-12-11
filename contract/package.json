@@ -1,0 +1,15 @@
+{
+    "name": "@gristlabs/widget-contract",
+    "description": "A template for showing an contract in a Custom Widget in Grist.",
+    "homePage": "https://github.com/gristlabs/grist-widget",
+    "version": "0.0.1",
+    "grist": {
+      "name": "contract",
+      "url": "https://gristlabs.github.io/grist-widget/constract",
+      "widgetId": "@gristlabs/widget-contract",
+      "published": true,
+      "accessLevel": "read table",
+      "renderAfterReady": true
+    }
+  }
+  
