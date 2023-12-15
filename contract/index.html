@@ -2,13 +2,15 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Grist Contract</title>
+    <title>Hợp Đồng Thuê Trọ</title>
 
     <!-- A template for showing an contract in a Custom Widget in Grist. -->
     <!-- Uses Vue.js, moment, and the Grist Plugin API -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.3/vue.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
     <script src="https://docs.getgrist.com/grist-plugin-api.js"></script>
+    <!-- Uses jspdf library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
 
     <script src="contract.js"></script>
     <script src="exampleData.js"></script>
@@ -19,27 +21,42 @@
     <div id="app">
       <div class="status" v-if="status">
         <template v-if="status === 'waiting'">
-          <p>Waiting for data...</p>
+          <p>Vui lòng chờ</p>
           <ul>
-            <li v-bind:class="[tableConnected ? 'done' : '']">I need <b>read table</b> access.</li>
-            <li v-bind:class="[haveRows ? 'done' : '']">I need at least one row of data.</li>
-            <li v-bind:class="[rowConnected ? 'done' : '']">I need <b>Select By</b> set.</li>
+            <li v-bind:class="[tableConnected ? 'done' : '']">Tôi cần truy cập <b>vào bảng thực</b></li>
+            <li v-bind:class="[haveRows ? 'done' : '']">Tôi cần ít nhất một hàng dữ liệu</li>
+            <li v-bind:class="[rowConnected ? 'done' : '']">Tôi cần <b>Chọn theo</b> bộ</li>
           </ul>
-          <p>Examples:</p>
+          <!--
+          <p>Ví dụ:</p>
           <ul>
-            <li><a class="button" href="index.html?demo=1">A filled out constract</a></li>
-            <li><a class="button" href="index.html?labels=1">A labelled constract</a></li>
+            <li><a class="button" href="index.html?demo=1">Xem hợp đồng mẫu</a></li>
+             
+            <li><a class="button" href="index.html?labels=1">Hợp đồng giản lược</a></li>
+            
           </ul>
+        -->
         </template>
         <template v-else>
           {{ status }}
         </template>
       </div>
-      <template v-if="invoice">
+      <template v-if="contract">
+        <div>{{ contract.Contract }}</div>
+        <div>{{ contract.DateInText }}</div>
+        <div>{{ contract.SideA }}</div>
+        <div>{{ contract.SideB }}</div>
+        <div>{{ contract.Room }}</div>
+        <div>{{ contract.RoomHandover }}</div>
+        <div>{{ contract.RoomPriceText }}</div>
+        <div>{{ contract.ItemFee }}</div>
+        <div>{{ contract.AccountBank }}</div>
+        <div>{{ contract.DateInFormat }}</div>
+        <!--
         <div class="top">
           <div class="block">
             <div class="header">
-              <div class="meta title">constract</div>
+              <div class="meta title">contract</div>
             </div>
             <div class="info"><span class="meta">constract Number</span> #{{ invoice.Number }}</div>
             <div class="info" v-if="invoice.Issued"><div class="meta date-tag">Issued</div> {{ invoice.Issued | asDate }}</div>
@@ -148,37 +165,7 @@
         <template v-if="invoice.Note">
           <p class="note">{{ invoice.Note }}</p>
         </template>
-
-        <template v-for="help in (invoice.Help ? [invoice.Help] : [])">
-          <div class="help">
-            <div class="help-close">
-              Add <span class="column-name">Due</span> or <span class="column-name">Issued</span> date to hide this help.
-            </div>
-            <div class="title">Column information</div>
-            <div class="details">
-              <table>
-                <tr v-for="group in ['recognized', 'expected', 'ignored']">
-                  <td class="key">{{ group }}</td>
-                  <td>
-                    <template v-if="group in help">
-                      <div v-bind:class="['column-name', 'column-' + group]" v-for="col in help[group]">{{col}}</div>
-                    </template>
-                    <template v-else>
-                      &mdash;
-                    </template>
-                  </td>
-                </tr>
-              </table>
-              <template v-if="invoice.SuggestReferencesColumn">
-                <div>For structured address and item information, add a <span class="column-name">References</span> column with this formula:</div>
-                <div>
-                  <pre>RECORD(rec, expand_refs=1)</pre>
-                </div>
-              </template>
-            </div>
-          </div>
-        </template>
-
+        
         <div class="footer">
           <div class="thanks">
             Thank you!
@@ -188,6 +175,7 @@
         <div class="print">
           <a href="javascript:window.print()">Print</a>
         </div>
+      -->
       </template>
     </div>
   </body>
