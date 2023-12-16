@@ -35,7 +35,6 @@
         </template>
       </div>
       <template v-if="contract">
-        <!--
         <div class="container">
           <span class="page1"></span>
           <div class="title-contract">
@@ -43,32 +42,32 @@
               HỢP ĐỒNG THUÊ PHÒNG TRỌ
             </div> 
             <div class="subheader">
-              Số: {{ contract.Contract }} 2023/KTX.NHA.ONG.BA
+              Số: <span>{{ contract.Contract }}</span> 2023/KTX.NHA.ONG.BA
             </div>
           </div>
           <div class="content">
             <p>
               Căn cứ vào các quy định tại Bộ luật dân sự và luật nhà ở:<br/>
-              <i class="danger">{{ contract.DateInText }}</i><br/>
+              <i class="danger"><span>{{ contract.DateInText }}</span></i><br/>
               <b><span class="underline">BÊN CHO THUÊ PHÒNG TRỌ</span> <i>(sau đây gọi là Bên A):</i></b> <br/>
-              {{ contract.SideA }}
+              <span>{{ contract.SideA }}</span>
             </p>
             <p>
               <b><span class="underline">BÊN THUÊ PHÒNG TRỌ</span> <i>(sau đây gọi là Bên B):</i></b> <br/>
               <span class="danger">
-                {{ contract.SideB }}
+                <span>{{ contract.SideB }}</span>
               </span>
               <br>
                 <b>
                 Sau khi trao đổi, thỏa thuận, hai bên cùng nhau thống nhất ký Hợp đồng cho thuê phòng trọ với nội dung như sau:<br/>
                 ĐIỀU 1: NỘI DUNG HỢP ĐỒNG <br/>
                 1.1	Đối tượng hợp đồng:</b>
-                Bên A đồng ý cho Bên B thuê phòng trọ số: <b>{{ contract.Room }}</b>. {{ contract.RoomHandover }} <br/>
+                Bên A đồng ý cho Bên B thuê phòng trọ số: <b><span>{{ contract.Room }}</span></b>. <span>{{ contract.RoomHandover }}</span> <br/>
                 <b>1.2 Giá thuê phòng trọ và tiền dịch vụ: </b> <br/>
-                <span class="danger">{{ contract.RoomPriceText }}</span> <br/>
+                <span class="danger"><span>{{ contract.RoomPriceText }}</span></span> <br/>
                 {{ contract.ItemFee }}
                 <b>1.3 Phương thức thanh toán: </b>Bằng tiền mặt/Chuyển khoản:<br/>
-                {{ contract.AccountBank }}</b><br/>
+                <span>{{ contract.AccountBank }}</span></b><br/>
                 <b>1.4 Thời gian thanh toán: </b>Tiền thuê phòng trọ và tiền dịch vụ (Nước, Internet và vệ sinh) thanh toán kỳ 03 tháng một lần vào ngày mồng 1 đến mồng 5 của tháng trước kỳ thuê mới. Tiền điện thanh toán vào cuối mỗi tháng.
             </p>
             <p>
@@ -81,7 +80,7 @@
                 2.4 Vào thời điểm kết thúc thời hạn thuê hoặc kể từ ngày chấm dứt hợp đồng, Bên A sẽ hoàn lại cho Bên B số Tiền Đặt Cọc sau khi đã khấu trừ chi phí để khắc phục thiệt hại (nếu có).<br/>
             </p>
             <span class="page2"></span>
-            <p class="danger"><b>ĐIỀU 3: THỜI HẠN CHO THUÊ 12THÁNG (Kỳ đóng 3T). Bắt đầu ngày: {{ contract.DateInFormat }} đến…</b></p>
+            <p class="danger"><b>ĐIỀU 3: THỜI HẠN CHO THUÊ 12THÁNG (Kỳ đóng 3T). Bắt đầu ngày: <span>{{ contract.DateInFormat }}</span> đến…</b></p>
             <p>
               <b>ĐIỀU 4: QUYỀN VÀ NGHĨA VỤ CỦA CÁC BÊN</b> <br/>
               4.1 Bên A: <br/>
@@ -123,8 +122,8 @@
             
           </div>
         </div>
-        -->
 
+        <!--
         <div>{{ contract.Contract }}</div>
         <div>{{ contract.DateInText }}</div>
         <div>{{ contract.SideA }}</div>
@@ -135,7 +134,7 @@
         <div>{{ contract.ItemFee }}</div>
         <div>{{ contract.AccountBank }}</div>
         <div>{{ contract.DateInFormat }}</div>
-        
+        -->
         <div class="print">
            <a href="javascript:window.print()">Print</a>
           <!-- <button onclick="generatePDF()">Print</button> -->
