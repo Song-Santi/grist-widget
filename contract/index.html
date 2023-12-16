@@ -21,9 +21,6 @@
   </head>
   <body>
     <div id="app">
-      <!--
-
-      
       <div class="status" v-if="status">
         <template v-if="status === 'waiting'">
           <p>Vui lòng thực hiện:</p>
@@ -37,8 +34,7 @@
           {{ status }}
         </template>
       </div>
-      -->
-      <template v-if="status">
+      <template v-if="contract">
         <div class="container">
           <span class="page1"></span>
           <div class="title-contract">
