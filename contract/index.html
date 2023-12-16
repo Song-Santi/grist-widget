@@ -19,29 +19,119 @@
   </head>
   <body>
     <div id="app">
+      <!--
       <div class="status" v-if="status">
         <template v-if="status === 'waiting'">
-          <p>Vui lòng chờ</p>
+          <p>Vui lòng thực hiện:</p>
           <ul>
-            <li v-bind:class="[tableConnected ? 'done' : '']">Tôi cần truy cập <b>vào bảng thực</b></li>
-            <li v-bind:class="[haveRows ? 'done' : '']">Tôi cần ít nhất một hàng dữ liệu</li>
-            <li v-bind:class="[rowConnected ? 'done' : '']">Tôi cần <b>Chọn theo</b> bộ</li>
+            <li v-bind:class="[tableConnected ? 'done' : '']">Bạn cần cấp quyền <b>Full document access </b>cho widget</li>
+            <li v-bind:class="[haveRows ? 'done' : '']">Thêm ít nhất một hàng dữ liệu</li>
+            <li v-bind:class="[rowConnected ? 'done' : '']">Chọn một hàng trong bảng dữ liệu để xem kết quả</li>
           </ul>
-          <!--
-          <p>Ví dụ:</p>
-          <ul>
-            <li><a class="button" href="index.html?demo=1">Xem hợp đồng mẫu</a></li>
-             
-            <li><a class="button" href="index.html?labels=1">Hợp đồng giản lược</a></li>
-            
-          </ul>
-        -->
         </template>
         <template v-else>
           {{ status }}
         </template>
       </div>
-      <template v-if="contract">
+      -->
+      <template v-if="status">
+        <div class="container">
+          <div class="title-contract">
+            <div class="header">
+              HỢP ĐỒNG THUÊ PHÒNG TRỌ
+            </div> 
+            <div class="subheader">
+              Số:    2023/KTX.NHA.ONG.BA
+            </div>
+          </div>
+          <div class="content">
+            <p>
+              Căn cứ vào các quy định tại Bộ luật dân sự và luật nhà ở:<br/>
+              <i class="danger">Hôm nay, ngày 01 tháng 09 năm 2023, chúng tôi gồm:</i><br/>
+              <b><span class="underline">BÊN CHO THUÊ PHÒNG TRỌ</span> <i>(sau đây gọi là Bên A):</i></b> <br/>
+              Ông Vương Bá Quang, sinh năm 1951, mang CCCD số 001051000519 <br/>do Cục cảnh sát QLHC về TTXH cấp ngày 24/06/2021, <br/>có hộ khẩu thường trú tại: 382 đường 21A cụm 4 thôn 3, Thạch Hòa, Thạch Thất, Hà Nội. <br/>Tel/Zalo: 098 963 9985 (Ms Quỳnh 090 434 6979).
+            </p>
+            <p>
+              <b><span class="underline">BÊN THUÊ PHÒNG TRỌ</span> <i>(sau đây gọi là Bên B):</i></b> <br/>
+              <span class="danger">
+                Ông/bà: LÊ PHƯƠNG MAI…………………., ngày sinh: 18/09/2005…..………..,<br/>
+                CCCD số: 001305013700…….Nơi cấp: QLHC về TTXH…….. Cấp ngày 29/04/2021……...,<br/>
+                Hộ khẩu thường trú tại: Báo Đáp Kiêu Kỵ, Gia Lâm, Hà Nội……….………….….<br/>
+                Tel: 0344981251 (Mẹ Nguyễn Thu Hằng 0333979004).<br/>
+                Trường: FPT.....Mail: phuongmai180905@gmail.com Facebook:……………………………<br/>
+              </span>
+              <br>
+                <b>
+                Sau khi trao đổi, thỏa thuận, hai bên cùng nhau thống nhất ký Hợp đồng cho thuê phòng trọ với nội dung như sau:<br/>
+                ĐIỀU 1: NỘI DUNG HỢP ĐỒNG <br/>
+                1.1	Đối tượng hợp đồng:</b>
+                Bên A đồng ý cho Bên B thuê phòng trọ số: <b>P02</b>. Diện tích: 20m2 
+                Tại KTX Nhà Ông Bà địa chỉ 382 đường 21A cụm 4 thôn 3, Thạch Hòa, Thạch Thất, Hà Nội. 
+                Trang thiết bị kèm theo: 01 bộ chìa khóa phòng, 02 thẻ từ thang máy, 02 bộ giường tủ bàn học, 
+                01 điều hòa kèm điều khiển, 01 bình nóng lạnh, 01 hệ thống điện nước, các bóng đèn, 
+                hệ thống công tắc, bồn rửa mặt, bồn vệ sinh. <br/>
+                <b>1.2 Giá thuê phòng trọ và tiền dịch vụ: </b> <br/>
+                <span class="danger">Giá phòng trọ: 2.500.000 đồng/phòng/tháng(Bằng chữ: Hai triệu, năm trăm ngàn đồng chẵn)</span> <br/>
+                Tiền điện: 2.500 đồng/kwh theo chỉ số công tơ. <br/>
+                Tiền nước: 50.000 đồng/người/tháng.<br/>
+                Tiền Internet: 50.000 đồng/người/tháng.<br/>
+                Tiền vệ sinh: 10.000 đồng/người/tháng.<br/>
+                <b>1.3 Phương thức thanh toán: </b>Bằng tiền mặt/Chuyển khoản:<br/>
+                Chủ tài khoản: <b>Trần Thị Lạm – 104870736609 - Vietinbank - CN Bắc Hà Nội</b><br/>
+                <b>1.4 Thời gian thanh toán: </b>Tiền thuê phòng trọ và tiền dịch vụ (Nước, Internet và vệ sinh) thanh toán kỳ 03 tháng một lần vào ngày mồng 1 đến mồng 5 của tháng trước kỳ thuê mới. Tiền điện thanh toán vào cuối mỗi tháng.
+            </p>
+            <p>
+              <b>ĐIỀU 2: ĐẶT CỌC THUÊ PHÒNG TRỌ <br/>
+                2.1 Bên B đặt cọc cho Bên A số tiền là 2.000.000 đồng (Hai triệu đồng chẵn) </b>ngay sau khi ký hợp đồng này để đảm bảm thực hiện Hợp đồng thuê phòng trọ.<br/>
+                2.2 Nếu Bên B đơn phương chấm dứt hợp đồng này mà không thực hiện nghĩa vụ báo trước ít nhất 30 ngày với Bên A thì Bên A sẽ không phải hoàn trả lại Bên B số tiền đặt cọc này.
+                Nếu Bên A đơn phương chấm dứt hợp đồng này mà không thực hiện nghĩa vụ báo trước tới bên B thì bên A sẽ phải hoàn trả lại Bên B số tiền đặt cọc này. <br/>
+                2.3 Tiền đặt cọc của Bên B sẽ không được dùng để thanh toán tiền thuê. Nếu Bên B vi phạm Hợp đồng này làm phát sinh thiệt hại cho Bên A thì Bên A có quyền khấu trừ Tiền Đặt Cọc 
+                để bù đắp các chi phí khắc phục thiệt hại phát sinh. Mức chi phí bù đắp thiệt hại sẽ được các bên thống nhất bằng văn bản. 
+                2.4 Vào thời điểm kết thúc thời hạn thuê hoặc kể từ ngày chấm dứt hợp đồng, Bên A sẽ hoàn lại cho Bên B số Tiền Đặt Cọc sau khi đã khấu trừ chi phí để khắc phục thiệt hại (nếu có).<br/>
+            </p>
+            <p class="danger"><b>ĐIỀU 3: THỜI HẠN CHO THUÊ 12THÁNG (Kỳ đóng 3T). Bắt đầu ngày: 1/9/2023 đến…</b></p>
+            <p>
+              <b>ĐIỀU 4: QUYỀN VÀ NGHĨA VỤ CỦA CÁC BÊN</b> <br/>
+              4.1 Bên A: <br/>
+              - Giao phòng trọ và các trang thiết bị gắn liền với phòng trọ cho Bên B theo đúng Hợp đồng;<br/>
+              -	Bảo đảm cho Bên B sử dụng ổn định phòng ở trong thời gian thuê;<br/>
+              -	Yêu cầu Bên B trả đủ tiền thuê, đúng kỳ hạn như đã thỏa thuận và có trách nhiệm trong việc sửa chữa phần hư hỏng, bồi thường thiệt hại do lỗi của Bên B gây ra;<br/>
+              -	Bảo trì, cải tạo khi phòng trọ hư hỏng nặng xảy ra;<br/>
+              4.2	Bên B: <br/>
+              -	Sử dụng phòng trọ đúng mục đích; Nam và nữ không thuê chung một phòng;<br/>
+              -	Thanh toán tiền thuê phòng, tiền điện, tiền nước, Internet, tiền vệ sinh đúng thời hạn;<br/>
+              -	Bảo quản các trang thiết bị và cơ sở vật chất của Bên A trang bị cho Bên B lúc nhận phòng trọ (làm hỏng phải sửa, mất phải đền);<br/>
+              -	Không được tự ý sửa chữa, cải tạo cơ sở vật chất khi chưa được sự đồng ý của Bên A;<br/>
+              -	Chấp hành các Quy định về giữ gìn vệ sinh chung, về môi trường và an ninh trật tự trong khu vực cư trú; Và nội quy chung của KTX Nhà Ông Bà;<br/>
+              -	Không để đồ cá nhân ở hành lang, lối đi, không gian chung của KTX Nhà Ông Bà.<br/>
+              -	Nếu Bên B cho khách ở lại qua đêm thì phải báo và được sự đồng ý của chủ nhà, đồng thời phải chịu trách nhiệm về các hành vi vi phạm pháp luật của khách trong thời gian ở lại.<br/>
+              -	Khi Bên B chấm dứt Hợp đồng phải bàn giao lại đầy đủ đồ đạc, trang thiết bị nội thất và dọn vệ sinh của phòng trọ cho Bên A như ban đầu. Chi phí hỏng phải sửa tùy vào thỏa thuận. Chi phí mất, hỏng: chìa khóa phòng 30k/chìa, chìa khóa tủ 50k/bộ, thẻ từ thang máy 100k/cái, thẻ xe 100k/cái, điều khiển điều hòa 500k/cái, dọn vệ sinh phòng 250k,…<br/>
+            </p>
+            <p>
+              <b>ĐIỀU 5: CHẤM DỨT HỢP ĐỒNG</b><br/>
+              Chấm dứt Hợp đồng được thực hiện trong các trường hợp sau:<br/>
+              -	Hợp đồng hết thời hạn giá trị;<br/>
+              -	Nhà bị tịch thu, phá dỡ theo quyết định của cơ quan nhà nước có thẩm quyền phê duyệt;<br/>
+              -	Nếu một trong hai bên đơn phương chấm dứt Hợp đồng không vì những lý do nêu trên thì phải báo trước cho bên kia ít nhất 01 tháng (30 ngày).<br/>
+            </p>
+            <p>
+              <b>ĐIỀU 6: CAM KẾT CỦA CÁC BÊN</b><br/>
+              Hai bên cùng cam kết thực hiện đúng các nội dung đã ký. Trong quá trình thực hiện thấy vấn đề cần thỏa thuận thì hai bên có thể lập thêm phụ lục Hợp đồng. Nội dung phụ lục có giá trị pháp lý như Hợp đồng chính;
+            </p>
+            <div class="sign">
+              <div class="side">
+                <p><b>BÊN CHO THUÊ PHÒNG TRỌ</b></p>
+                <p class="signA"><b>VƯƠNG BÁ QUANG</b></p>
+              </div>
+              <div class="side">
+                 <p><b>BÊN THUÊ PHÒNG TRỌ</b></p>
+              </div>
+            </div>
+
+            
+          </div>
+        </div>
+        <!--
         <div>{{ contract.Contract }}</div>
         <div>{{ contract.DateInText }}</div>
         <div>{{ contract.SideA }}</div>
@@ -52,130 +142,12 @@
         <div>{{ contract.ItemFee }}</div>
         <div>{{ contract.AccountBank }}</div>
         <div>{{ contract.DateInFormat }}</div>
-        <!--
-        <div class="top">
-          <div class="block">
-            <div class="header">
-              <div class="meta title">contract</div>
-            </div>
-            <div class="info"><span class="meta">constract Number</span> #{{ invoice.Number }}</div>
-            <div class="info" v-if="invoice.Issued"><div class="meta date-tag">Issued</div> {{ invoice.Issued | asDate }}</div>
-            <div class="info" v-if="invoice.Due"><div class="meta date-tag">Due</div> {{ invoice.Due | asDate }}</div>
-          </div>
-          
-          <div class="supplier">
-            <div v-for="business in (invoice.Invoicer ? [invoice.Invoicer] : [])">
-              <template v-if="typeof(business) === 'string'">
-                <div class="address newlined">{{ business }}</div>
-              </template>
-              <template v-else>
-                <div class="address">
-                  <span class="name">{{ business.Name }}</span><br />
-                  {{ business.Street1 }}<br />
-                  <template v-if="business.Street2">
-                    {{ business.Street2 }}<br />
-                  </template>
-                  {{ business.City }} {{ business.State }} {{ business.Zip }}<br />
-                  <template v-if="business.Country">
-                    {{ business.Country }}<br />
-                  </template>
-                </div>
-                <template v-if="business.Email">
-                  <div class="email">{{ business.Email }}</div>
-                </template>
-                <template v-if="business.Phone">
-                  <div class="phone">{{ business.Phone }}</div>
-                </template>
-                <template v-if="business.Website">
-                  <div class="website"><a v-bind:href="business.Url">{{ business.Website }}</a></div>
-                </template>
-              </template>
-            </div>
-          </div>
-        </div>
+        -->
         
-        <div class="client" v-for="business in (invoice.Client ? [invoice.Client] : [])">
-          <div class="title">Client</div>
-          <div class="details">
-            <template v-if="typeof(business) === 'string'">
-              <div class="newlined">{{ business }}</div>
-            </template>
-            <template v-else>
-              <div>{{ business.Name }}</div>
-              <template v-if="business.Street1">
-                {{ business.Street1 }},
-              </template>
-              <template v-if="business.Street2">
-                {{ business.Street2 }},
-              </template>
-              {{ business.City }} {{ business.State }} {{ business.Zip }}
-              <template v-if="business.Country">
-                <br />{{ business.Country }}
-              </template>
-            </template>
-          </div>
-        </div>
-
-        <table class="items">
-          <template v-if="!Array.isArray(invoice.Items)">
-            <tr>
-              <th>Description</th>
-              <th class="money">Total</th>
-            </tr>
-            <tr>
-              <td>{{ invoice.Items }}</td>
-              <td class="money">{{ invoice.Total | currency }}</td>
-            </tr>
-          </template>
-          <template v-else>
-            <tr>
-              <th>Description</th>
-              <th class="money">Unit Price</th>
-              <th class="number">Quantity</th>
-              <th class="money">Total</th>
-            </tr>
-            <tr v-for="item in invoice.Items">
-              <td>{{ item.Description }}</td>
-              <td class="money">{{ item.Price | currency }}</td>
-              <td class="number">{{ item.Quantity }}</td>
-              <td class="money">{{ item.Total | currency }}</td>
-            </tr>
-          </template>
-        </table>
-
-        <div class="summary">
-          <div class="part">
-            <div class="title">Subtotal</div>
-            <div class="details">{{ invoice.Subtotal | currency }}</div>
-          </div>
-          <div class="part">
-            <div class="title">Deduction</div>
-            <div class="details">{{ invoice.Deduction | currency }}</div>
-          </div>
-          <div class="part">
-            <div class="title">Taxes</div>
-            <div class="details">{{ invoice.Taxes | currency }}</div>
-          </div>
-          <div class="total">
-            <div class="title">Total</div>
-            <div class="details">{{ invoice.Total | currency }}</div>
-          </div>
-        </div>
-
-        <template v-if="invoice.Note">
-          <p class="note">{{ invoice.Note }}</p>
-        </template>
-        
-        <div class="footer">
-          <div class="thanks">
-            Thank you!
-          </div>
-        </div>
-
         <div class="print">
-          <a href="javascript:window.print()">Print</a>
+          <!-- <a href="javascript:window.print()">Print</a> -->
+          <button onclick="generatePDF()">Print</button>
         </div>
-      -->
       </template>
     </div>
   </body>
