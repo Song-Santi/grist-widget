@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Hợp Đồng Thuê Trọ</title>
+    <title>&nbsp;</title>
 
     <!-- A template for showing an contract in a Custom Widget in Grist. -->
     <!-- Uses Vue.js, moment, and the Grist Plugin API -->
@@ -11,6 +11,8 @@
     <script src="https://docs.getgrist.com/grist-plugin-api.js"></script>
     <!-- Uses jspdf library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <script src="./node_modules/jspdf/dist/jspdf.umd.min.js"></script>
+
 
     <script src="contract.js"></script>
     <script src="exampleData.js"></script>
@@ -20,6 +22,8 @@
   <body>
     <div id="app">
       <!--
+
+      
       <div class="status" v-if="status">
         <template v-if="status === 'waiting'">
           <p>Vui lòng thực hiện:</p>
@@ -36,48 +40,38 @@
       -->
       <template v-if="status">
         <div class="container">
+          <span class="page1"></span>
           <div class="title-contract">
             <div class="header">
               HỢP ĐỒNG THUÊ PHÒNG TRỌ
             </div> 
             <div class="subheader">
-              Số:    2023/KTX.NHA.ONG.BA
+              Số: {{ contract.Contract }} 2023/KTX.NHA.ONG.BA
             </div>
           </div>
           <div class="content">
             <p>
               Căn cứ vào các quy định tại Bộ luật dân sự và luật nhà ở:<br/>
-              <i class="danger">Hôm nay, ngày 01 tháng 09 năm 2023, chúng tôi gồm:</i><br/>
+              <i class="danger">{{ contract.DateInText }}</i><br/>
               <b><span class="underline">BÊN CHO THUÊ PHÒNG TRỌ</span> <i>(sau đây gọi là Bên A):</i></b> <br/>
-              Ông Vương Bá Quang, sinh năm 1951, mang CCCD số 001051000519 <br/>do Cục cảnh sát QLHC về TTXH cấp ngày 24/06/2021, <br/>có hộ khẩu thường trú tại: 382 đường 21A cụm 4 thôn 3, Thạch Hòa, Thạch Thất, Hà Nội. <br/>Tel/Zalo: 098 963 9985 (Ms Quỳnh 090 434 6979).
+              {{ contract.SideA }}
             </p>
             <p>
               <b><span class="underline">BÊN THUÊ PHÒNG TRỌ</span> <i>(sau đây gọi là Bên B):</i></b> <br/>
               <span class="danger">
-                Ông/bà: LÊ PHƯƠNG MAI…………………., ngày sinh: 18/09/2005…..………..,<br/>
-                CCCD số: 001305013700…….Nơi cấp: QLHC về TTXH…….. Cấp ngày 29/04/2021……...,<br/>
-                Hộ khẩu thường trú tại: Báo Đáp Kiêu Kỵ, Gia Lâm, Hà Nội……….………….….<br/>
-                Tel: 0344981251 (Mẹ Nguyễn Thu Hằng 0333979004).<br/>
-                Trường: FPT.....Mail: phuongmai180905@gmail.com Facebook:……………………………<br/>
+                {{ contract.SideB }}
               </span>
               <br>
                 <b>
                 Sau khi trao đổi, thỏa thuận, hai bên cùng nhau thống nhất ký Hợp đồng cho thuê phòng trọ với nội dung như sau:<br/>
                 ĐIỀU 1: NỘI DUNG HỢP ĐỒNG <br/>
                 1.1	Đối tượng hợp đồng:</b>
-                Bên A đồng ý cho Bên B thuê phòng trọ số: <b>P02</b>. Diện tích: 20m2 
-                Tại KTX Nhà Ông Bà địa chỉ 382 đường 21A cụm 4 thôn 3, Thạch Hòa, Thạch Thất, Hà Nội. 
-                Trang thiết bị kèm theo: 01 bộ chìa khóa phòng, 02 thẻ từ thang máy, 02 bộ giường tủ bàn học, 
-                01 điều hòa kèm điều khiển, 01 bình nóng lạnh, 01 hệ thống điện nước, các bóng đèn, 
-                hệ thống công tắc, bồn rửa mặt, bồn vệ sinh. <br/>
+                Bên A đồng ý cho Bên B thuê phòng trọ số: <b>{{ contract.Room }}</b>. {{ contract.RoomHandover }} <br/>
                 <b>1.2 Giá thuê phòng trọ và tiền dịch vụ: </b> <br/>
-                <span class="danger">Giá phòng trọ: 2.500.000 đồng/phòng/tháng(Bằng chữ: Hai triệu, năm trăm ngàn đồng chẵn)</span> <br/>
-                Tiền điện: 2.500 đồng/kwh theo chỉ số công tơ. <br/>
-                Tiền nước: 50.000 đồng/người/tháng.<br/>
-                Tiền Internet: 50.000 đồng/người/tháng.<br/>
-                Tiền vệ sinh: 10.000 đồng/người/tháng.<br/>
+                <span class="danger">{{ contract.RoomPriceText }}</span> <br/>
+                {{ contract.ItemFee }}
                 <b>1.3 Phương thức thanh toán: </b>Bằng tiền mặt/Chuyển khoản:<br/>
-                Chủ tài khoản: <b>Trần Thị Lạm – 104870736609 - Vietinbank - CN Bắc Hà Nội</b><br/>
+                {{ contract.AccountBank }}</b><br/>
                 <b>1.4 Thời gian thanh toán: </b>Tiền thuê phòng trọ và tiền dịch vụ (Nước, Internet và vệ sinh) thanh toán kỳ 03 tháng một lần vào ngày mồng 1 đến mồng 5 của tháng trước kỳ thuê mới. Tiền điện thanh toán vào cuối mỗi tháng.
             </p>
             <p>
@@ -89,7 +83,8 @@
                 để bù đắp các chi phí khắc phục thiệt hại phát sinh. Mức chi phí bù đắp thiệt hại sẽ được các bên thống nhất bằng văn bản. 
                 2.4 Vào thời điểm kết thúc thời hạn thuê hoặc kể từ ngày chấm dứt hợp đồng, Bên A sẽ hoàn lại cho Bên B số Tiền Đặt Cọc sau khi đã khấu trừ chi phí để khắc phục thiệt hại (nếu có).<br/>
             </p>
-            <p class="danger"><b>ĐIỀU 3: THỜI HẠN CHO THUÊ 12THÁNG (Kỳ đóng 3T). Bắt đầu ngày: 1/9/2023 đến…</b></p>
+            <span class="page2"></span>
+            <p class="danger"><b>ĐIỀU 3: THỜI HẠN CHO THUÊ 12THÁNG (Kỳ đóng 3T). Bắt đầu ngày: {{ contract.DateInFormat }} đến…</b></p>
             <p>
               <b>ĐIỀU 4: QUYỀN VÀ NGHĨA VỤ CỦA CÁC BÊN</b> <br/>
               4.1 Bên A: <br/>
@@ -131,6 +126,7 @@
             
           </div>
         </div>
+        
         <!--
         <div>{{ contract.Contract }}</div>
         <div>{{ contract.DateInText }}</div>
@@ -145,44 +141,10 @@
         -->
         
         <div class="print">
-          <!-- <a href="javascript:window.print()">Print</a>  -->
-          <button onclick="generatePDF()">Print</button> 
+           <a href="javascript:window.print()">Print</a>
+          <!-- <button onclick="generatePDF()">Print</button> -->
         </div>
       </template>
     </div>
   </body>
-  <script type="text/javascript">
-    function generatePDF() {
-      // Tạo đối tượng jsPDF
-      var pdf = new jsPDF('p', 'pt', 'letter');
-
-      // Tắt header và footer mặc định
-      pdf.setDisplayMode('fullwidth', 'single');
-
-      // Định nghĩa header
-      var header = function(data) {
-        // Sử dụng ảnh cho header
-        pdf.addImage('./asset/header.jpg', 'JPEG', 40, 20, 80, 40);
-      };
-
-      // Định nghĩa footer
-      var footer = function(data) {
-        // Sử dụng ảnh cho footer
-        pdf.addImage('./asset/footer.jpg', 'JPEG', 40, 750, 80, 40);
-
-        // Thêm số trang
-        pdf.text('Page ' + data.pageNumber, data.settings.margin.left, 780);
-      };
-
-      // Đăng ký header và footer
-      pdf.autoTable({ head: [], body: [] }); // Cần thêm autoTable để đăng ký header và footer
-      pdf.autoTable({ head: [], body: [], didDrawPage: header, willDrawPage: footer });
-
-      // Thêm nội dung vào trang PDF, ví dụ:
-      //pdf.text('Hello, this is the content of the PDF.', 40, 120);
-
-      // Tải PDF với tên file là 'output.pdf'
-      pdf.save('Contract.pdf');
-    }
-  </script>
 </html>

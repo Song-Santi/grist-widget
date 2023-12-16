@@ -101,4 +101,38 @@ app = new Vue({
 
 });
   
+//handle PDF
+/*
+function generatePDF() {
+  // Tạo đối tượng jsPDF
+  var pdf = new jsPDF('p', 'pt', 'letter');
 
+  // Tắt header và footer mặc định
+  pdf.setDisplayMode('fullwidth', 'single');
+
+  // Định nghĩa header
+  var header = function(data) {
+    // Sử dụng ảnh cho header
+    pdf.addImage('./asset/header.jpg', 'JPEG', 40, 20, 80, 40);
+  };
+
+  // Định nghĩa footer
+  var footer = function(data) {
+    // Sử dụng ảnh cho footer
+    pdf.addImage('./asset/footer.jpg', 'JPEG', 40, 750, 80, 40);
+
+    // Thêm số trang
+    pdf.text('Page ' + data.pageNumber, data.settings.margin.left, 780);
+  };
+
+  // Đăng ký header và footer
+  pdf.autoTable({ head: [], body: [] }); // Cần thêm autoTable để đăng ký header và footer
+  pdf.autoTable({ head: [], body: [], didDrawPage: header, willDrawPage: footer });
+
+  // Thêm nội dung vào trang PDF, ví dụ:
+  //pdf.text('Hello, this is the content of the PDF.', 40, 120);
+
+  // Tải PDF với tên file là 'output.pdf'
+  pdf.save('Contract.pdf');
+}
+*/ 

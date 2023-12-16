@@ -1,3 +1,4 @@
+
 * {
   box-sizing: border-box;
 }
@@ -7,14 +8,14 @@ body {
   max-width: 800px;
   height: auto;
   margin: 0 auto;
-  border: 1px solid red;
 
 }
-/*
+
 .container {
-  padding: 5px 10px 5px 10px;
+  margin-top: 100px;
+  margin-bottom: 80px;
 }
-*/
+
 
 p {
   font-size: 12px;
@@ -48,8 +49,8 @@ p {
 .content {
   margin-top: 20px;
   height: auto;
-  padding-left: 90px;
-  padding-right: 90px;
+  padding-left: 75px;
+  padding-right: 75px;
   width: 100%;
 }
 
@@ -74,6 +75,30 @@ p {
     display: none;
   }
 
+  @page {
+    size: A4;
+    margin: 1cm;
+  }
+
+  span.page1 {
+    page-break-before: always;
+    display: block; 
+  }
+
+  span.page2 {
+    page-break-before: always;
+    display: block; 
+  }
+
+  span.page1 {
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+  span.page2 {
+    margin-top: 180px;
+    margin-bottom: 50px;
+  }
+
 }
 
 div.print {
@@ -82,7 +107,7 @@ div.print {
   bottom: 0;
 }
 
-div.print button {
+div.print a {
   background: #C83200;
   display: block;
   font-size: 200%;
@@ -95,8 +120,9 @@ div.print button {
   text-transform: uppercase;
 }
 
-div.print button:hover {
+div.print a:hover {
   background: #4682B4;
 }
+
 
   
