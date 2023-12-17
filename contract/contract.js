@@ -33,11 +33,11 @@ Vue.filter('fallback', function(value, str) {
 });
 
 function handleError(err) {
-  console.error(err);
+  console.error("Error: ",err);
   const target = app || data;
   target.contract = '';
   target.status = String(err).replace(/^Error: /, '');
-  console.log(data);
+  console.log("Data log:",data);
 }
 
 function updateContract(row) {
