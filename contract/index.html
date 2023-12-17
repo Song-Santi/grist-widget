@@ -17,6 +17,7 @@
   </head>
   <body>
     <div id="app">
+      <!--
       <div class="status" v-if="status">
         <template v-if="status === 'waiting'">
           <p>Vui lòng thực hiện:</p>
@@ -30,7 +31,8 @@
           {{ status }}
         </template>
       </div>
-      <template v-if="contract">
+      -->
+      <template v-if="status">
         <div class="container">
           <div class="page1">
             <div class="decoration-header">
@@ -55,7 +57,11 @@
                 <p>
                   <b><span class="underline">BÊN THUÊ PHÒNG TRỌ</span> <i>(sau đây gọi là Bên B):</i></b> <br/>
                   <span class="danger">
-                    <span>{{ contract.SideB }}</span>
+                    <span>{{ contract.NameBirthB }}</span> <br/>
+                    <span>{{ contract.IdentificationB }}</span> <br/>
+                    <span>{{ contract.HometownB }}</span> <br/>
+                    <span>{{ contract.ContactPhoneB }}</span> <br/>
+                    <span>{{ contract.SchoolSocial }}</span> <br/>
                   </span>
                   <br>
                     <b>
@@ -78,9 +84,11 @@
                     2.1 Bên B đặt cọc cho Bên A số tiền là 2.000.000 đồng (Hai triệu đồng chẵn) </b>ngay sau khi ký hợp đồng này để đảm bảm thực hiện Hợp đồng thuê phòng trọ.<br/>
                     2.2 Nếu Bên B đơn phương chấm dứt hợp đồng này mà không thực hiện nghĩa vụ báo trước ít nhất 30 ngày với Bên A thì Bên A sẽ không phải hoàn trả lại Bên B số tiền đặt cọc này.
                     Nếu Bên A đơn phương chấm dứt hợp đồng này mà không thực hiện nghĩa vụ báo trước tới bên B thì bên A sẽ phải hoàn trả lại Bên B số tiền đặt cọc này. <br/>
-                    2.3 Tiền đặt cọc của Bên B sẽ không được dùng để thanh toán tiền thuê. Nếu Bên B vi phạm Hợp đồng này làm phát sinh thiệt hại cho Bên A thì Bên A có quyền khấu trừ Tiền Đặt Cọc 
-                    để bù đắp các chi phí khắc phục thiệt hại phát sinh. Mức chi phí bù đắp thiệt hại sẽ được các bên thống nhất bằng văn bản. 
-                    2.4 Vào thời điểm kết thúc thời hạn thuê hoặc kể từ ngày chấm dứt hợp đồng, Bên A sẽ hoàn lại cho Bên B số Tiền Đặt Cọc sau khi đã khấu trừ chi phí để khắc phục thiệt hại (nếu có).<br/>
+                    <span class="display-web">
+                      2.3 Tiền đặt cọc của Bên B sẽ không được dùng để thanh toán tiền thuê. Nếu Bên B vi phạm Hợp đồng này làm phát sinh thiệt hại cho Bên A thì Bên A có quyền khấu trừ Tiền Đặt Cọc 
+                      để bù đắp các chi phí khắc phục thiệt hại phát sinh. Mức chi phí bù đắp thiệt hại sẽ được các bên thống nhất bằng văn bản. <br/>
+                      2.4 Vào thời điểm kết thúc thời hạn thuê hoặc kể từ ngày chấm dứt hợp đồng, Bên A sẽ hoàn lại cho Bên B số Tiền Đặt Cọc sau khi đã khấu trừ chi phí để khắc phục thiệt hại (nếu có).
+                    </span>
                 </p>
               </div>
             </div>
@@ -93,6 +101,11 @@
               <img src="./asset/header.jpg" alt="Header Image">
             </div>
             <div class="content">
+              <p class="display-print">
+                2.3 Tiền đặt cọc của Bên B sẽ không được dùng để thanh toán tiền thuê. Nếu Bên B vi phạm Hợp đồng này làm phát sinh thiệt hại cho Bên A thì Bên A có quyền khấu trừ Tiền Đặt Cọc 
+                để bù đắp các chi phí khắc phục thiệt hại phát sinh. Mức chi phí bù đắp thiệt hại sẽ được các bên thống nhất bằng văn bản. <br/>
+                2.4 Vào thời điểm kết thúc thời hạn thuê hoặc kể từ ngày chấm dứt hợp đồng, Bên A sẽ hoàn lại cho Bên B số Tiền Đặt Cọc sau khi đã khấu trừ chi phí để khắc phục thiệt hại (nếu có).
+              </p>
               <p class="danger"><b>ĐIỀU 3: THỜI HẠN CHO THUÊ 12THÁNG (Kỳ đóng 3T). Bắt đầu ngày: <span>{{ contract.DateInFormat }}</span> đến…</b></p>
               <p>
                 <b>ĐIỀU 4: QUYỀN VÀ NGHĨA VỤ CỦA CÁC BÊN</b> <br/>

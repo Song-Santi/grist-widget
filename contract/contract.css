@@ -48,6 +48,14 @@ p {
   text-decoration: underline;
 }
 
+.display-print {
+  display:none;
+}
+
+.page2 {
+  margin-top:-20px;
+}
+
 .sign {
   display: flex;
   padding: 10px;
@@ -97,6 +105,14 @@ p {
   .main-page1 {
     margin-top: 35px;
   }
+
+  .display-web {
+    display: none;
+  }
+
+  .display-print {
+    display:inline;
+  }
   
   .decoration-footer {
     display: inline;
@@ -107,6 +123,10 @@ p {
   div.page1, div.page2 {
     page-break-before: always;
     display: block; 
+  }
+
+  .page2 {
+    margin-top:0px;
   }
 }
 
