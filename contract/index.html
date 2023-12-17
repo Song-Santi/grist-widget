@@ -34,90 +34,109 @@
       </div>
       <template v-if="contract">
         <div class="container">
-          <span class="page1"></span>
-          <div class="title-contract">
-            <div class="header">
-              HỢP ĐỒNG THUÊ PHÒNG TRỌ
-            </div> 
-            <div class="subheader">
-              Số: <span>{{ contract.Contract }}</span> 2023/KTX.NHA.ONG.BA
+          <div class="page1">
+            <div class="decoration-header">
+              <img src="./asset/header.jpg" alt="Header Image">
+            </div>
+            <div class="content">
+              <div class="title-contract">
+                <div class="header">
+                  HỢP ĐỒNG THUÊ PHÒNG TRỌ
+                </div> 
+                <div class="subheader">
+                  Số: <pre>   </pre>2023/KTX.NHA.ONG.BA
+                </div>
+              </div>
+              <div>
+                <p>
+                  Căn cứ vào các quy định tại Bộ luật dân sự và luật nhà ở:<br/>
+                  <i class="danger"><span>{{ contract.DateInText }}</span></i><br/>
+                  <b><span class="underline">BÊN CHO THUÊ PHÒNG TRỌ</span> <i>(sau đây gọi là Bên A):</i></b> <br/>
+                  <span>{{ contract.SideA }}</span>
+                </p>
+                <p>
+                  <b><span class="underline">BÊN THUÊ PHÒNG TRỌ</span> <i>(sau đây gọi là Bên B):</i></b> <br/>
+                  <span class="danger">
+                    <span>{{ contract.SideB }}</span>
+                  </span>
+                  <br>
+                    <b>
+                    Sau khi trao đổi, thỏa thuận, hai bên cùng nhau thống nhất ký Hợp đồng cho thuê phòng trọ với nội dung như sau:<br/>
+                    ĐIỀU 1: NỘI DUNG HỢP ĐỒNG <br/>
+                    1.1	Đối tượng hợp đồng:</b>
+                    Bên A đồng ý cho Bên B thuê phòng trọ số: <b><span>{{ contract.Room }}</span></b>. <span>{{ contract.RoomHandover }}</span> <br/>
+                    <b>1.2 Giá thuê phòng trọ và tiền dịch vụ: </b> <br/>
+                    <span class="danger"><span>{{ contract.RoomPriceText }}</span></span> <br/>
+                    Tiền điện: 2.500 đồng/kwh theo chỉ số công tơ.
+                    Tiền nước: 50.000 đồng/người/tháng.<br/>
+                    Tiền Internet: 50.000 đồng/người/tháng.<br/>
+                    Tiền vệ sinh: 10.000 đồng/người/tháng.<br/>
+                    <b>1.3 Phương thức thanh toán: </b>Bằng tiền mặt/Chuyển khoản:<br/>
+                    <span>{{ contract.AccountBank }}</span></b><br/>
+                    <b>1.4 Thời gian thanh toán: </b>Tiền thuê phòng trọ và tiền dịch vụ (Nước, Internet và vệ sinh) thanh toán kỳ 03 tháng một lần vào ngày mồng 1 đến mồng 5 của tháng trước kỳ thuê mới. Tiền điện thanh toán vào cuối mỗi tháng.
+                </p>
+                <p>
+                  <b>ĐIỀU 2: ĐẶT CỌC THUÊ PHÒNG TRỌ <br/>
+                    2.1 Bên B đặt cọc cho Bên A số tiền là 2.000.000 đồng (Hai triệu đồng chẵn) </b>ngay sau khi ký hợp đồng này để đảm bảm thực hiện Hợp đồng thuê phòng trọ.<br/>
+                    2.2 Nếu Bên B đơn phương chấm dứt hợp đồng này mà không thực hiện nghĩa vụ báo trước ít nhất 30 ngày với Bên A thì Bên A sẽ không phải hoàn trả lại Bên B số tiền đặt cọc này.
+                    Nếu Bên A đơn phương chấm dứt hợp đồng này mà không thực hiện nghĩa vụ báo trước tới bên B thì bên A sẽ phải hoàn trả lại Bên B số tiền đặt cọc này. <br/>
+                    2.3 Tiền đặt cọc của Bên B sẽ không được dùng để thanh toán tiền thuê. Nếu Bên B vi phạm Hợp đồng này làm phát sinh thiệt hại cho Bên A thì Bên A có quyền khấu trừ Tiền Đặt Cọc 
+                    để bù đắp các chi phí khắc phục thiệt hại phát sinh. Mức chi phí bù đắp thiệt hại sẽ được các bên thống nhất bằng văn bản. 
+                    2.4 Vào thời điểm kết thúc thời hạn thuê hoặc kể từ ngày chấm dứt hợp đồng, Bên A sẽ hoàn lại cho Bên B số Tiền Đặt Cọc sau khi đã khấu trừ chi phí để khắc phục thiệt hại (nếu có).<br/>
+                </p>
+              </div>
+            </div>
+            <div class="decoration-footer">
+              <img src="./asset/footer.jpg" alt="Footer Image">
             </div>
           </div>
-          <div class="content">
-            <p>
-              Căn cứ vào các quy định tại Bộ luật dân sự và luật nhà ở:<br/>
-              <i class="danger"><span>{{ contract.DateInText }}</span></i><br/>
-              <b><span class="underline">BÊN CHO THUÊ PHÒNG TRỌ</span> <i>(sau đây gọi là Bên A):</i></b> <br/>
-              <span>{{ contract.SideA }}</span>
-            </p>
-            <p>
-              <b><span class="underline">BÊN THUÊ PHÒNG TRỌ</span> <i>(sau đây gọi là Bên B):</i></b> <br/>
-              <span class="danger">
-                <span>{{ contract.SideB }}</span>
-              </span>
-              <br>
-                <b>
-                Sau khi trao đổi, thỏa thuận, hai bên cùng nhau thống nhất ký Hợp đồng cho thuê phòng trọ với nội dung như sau:<br/>
-                ĐIỀU 1: NỘI DUNG HỢP ĐỒNG <br/>
-                1.1	Đối tượng hợp đồng:</b>
-                Bên A đồng ý cho Bên B thuê phòng trọ số: <b><span>{{ contract.Room }}</span></b>. <span>{{ contract.RoomHandover }}</span> <br/>
-                <b>1.2 Giá thuê phòng trọ và tiền dịch vụ: </b> <br/>
-                <span class="danger"><span>{{ contract.RoomPriceText }}</span></span> <br/>
-                {{ contract.ItemFee }}
-                <b>1.3 Phương thức thanh toán: </b>Bằng tiền mặt/Chuyển khoản:<br/>
-                <span>{{ contract.AccountBank }}</span></b><br/>
-                <b>1.4 Thời gian thanh toán: </b>Tiền thuê phòng trọ và tiền dịch vụ (Nước, Internet và vệ sinh) thanh toán kỳ 03 tháng một lần vào ngày mồng 1 đến mồng 5 của tháng trước kỳ thuê mới. Tiền điện thanh toán vào cuối mỗi tháng.
-            </p>
-            <p>
-              <b>ĐIỀU 2: ĐẶT CỌC THUÊ PHÒNG TRỌ <br/>
-                2.1 Bên B đặt cọc cho Bên A số tiền là 2.000.000 đồng (Hai triệu đồng chẵn) </b>ngay sau khi ký hợp đồng này để đảm bảm thực hiện Hợp đồng thuê phòng trọ.<br/>
-                2.2 Nếu Bên B đơn phương chấm dứt hợp đồng này mà không thực hiện nghĩa vụ báo trước ít nhất 30 ngày với Bên A thì Bên A sẽ không phải hoàn trả lại Bên B số tiền đặt cọc này.
-                Nếu Bên A đơn phương chấm dứt hợp đồng này mà không thực hiện nghĩa vụ báo trước tới bên B thì bên A sẽ phải hoàn trả lại Bên B số tiền đặt cọc này. <br/>
-                2.3 Tiền đặt cọc của Bên B sẽ không được dùng để thanh toán tiền thuê. Nếu Bên B vi phạm Hợp đồng này làm phát sinh thiệt hại cho Bên A thì Bên A có quyền khấu trừ Tiền Đặt Cọc 
-                để bù đắp các chi phí khắc phục thiệt hại phát sinh. Mức chi phí bù đắp thiệt hại sẽ được các bên thống nhất bằng văn bản. 
-                2.4 Vào thời điểm kết thúc thời hạn thuê hoặc kể từ ngày chấm dứt hợp đồng, Bên A sẽ hoàn lại cho Bên B số Tiền Đặt Cọc sau khi đã khấu trừ chi phí để khắc phục thiệt hại (nếu có).<br/>
-            </p>
-            <span class="page2"></span>
-            <p class="danger"><b>ĐIỀU 3: THỜI HẠN CHO THUÊ 12THÁNG (Kỳ đóng 3T). Bắt đầu ngày: <span>{{ contract.DateInFormat }}</span> đến…</b></p>
-            <p>
-              <b>ĐIỀU 4: QUYỀN VÀ NGHĨA VỤ CỦA CÁC BÊN</b> <br/>
-              4.1 Bên A: <br/>
-              - Giao phòng trọ và các trang thiết bị gắn liền với phòng trọ cho Bên B theo đúng Hợp đồng;<br/>
-              -	Bảo đảm cho Bên B sử dụng ổn định phòng ở trong thời gian thuê;<br/>
-              -	Yêu cầu Bên B trả đủ tiền thuê, đúng kỳ hạn như đã thỏa thuận và có trách nhiệm trong việc sửa chữa phần hư hỏng, bồi thường thiệt hại do lỗi của Bên B gây ra;<br/>
-              -	Bảo trì, cải tạo khi phòng trọ hư hỏng nặng xảy ra;<br/>
-              4.2	Bên B: <br/>
-              -	Sử dụng phòng trọ đúng mục đích; Nam và nữ không thuê chung một phòng;<br/>
-              -	Thanh toán tiền thuê phòng, tiền điện, tiền nước, Internet, tiền vệ sinh đúng thời hạn;<br/>
-              -	Bảo quản các trang thiết bị và cơ sở vật chất của Bên A trang bị cho Bên B lúc nhận phòng trọ (làm hỏng phải sửa, mất phải đền);<br/>
-              -	Không được tự ý sửa chữa, cải tạo cơ sở vật chất khi chưa được sự đồng ý của Bên A;<br/>
-              -	Chấp hành các Quy định về giữ gìn vệ sinh chung, về môi trường và an ninh trật tự trong khu vực cư trú; Và nội quy chung của KTX Nhà Ông Bà;<br/>
-              -	Không để đồ cá nhân ở hành lang, lối đi, không gian chung của KTX Nhà Ông Bà.<br/>
-              -	Nếu Bên B cho khách ở lại qua đêm thì phải báo và được sự đồng ý của chủ nhà, đồng thời phải chịu trách nhiệm về các hành vi vi phạm pháp luật của khách trong thời gian ở lại.<br/>
-              -	Khi Bên B chấm dứt Hợp đồng phải bàn giao lại đầy đủ đồ đạc, trang thiết bị nội thất và dọn vệ sinh của phòng trọ cho Bên A như ban đầu. Chi phí hỏng phải sửa tùy vào thỏa thuận. Chi phí mất, hỏng: chìa khóa phòng 30k/chìa, chìa khóa tủ 50k/bộ, thẻ từ thang máy 100k/cái, thẻ xe 100k/cái, điều khiển điều hòa 500k/cái, dọn vệ sinh phòng 250k,…<br/>
-            </p>
-            <p>
-              <b>ĐIỀU 5: CHẤM DỨT HỢP ĐỒNG</b><br/>
-              Chấm dứt Hợp đồng được thực hiện trong các trường hợp sau:<br/>
-              -	Hợp đồng hết thời hạn giá trị;<br/>
-              -	Nhà bị tịch thu, phá dỡ theo quyết định của cơ quan nhà nước có thẩm quyền phê duyệt;<br/>
-              -	Nếu một trong hai bên đơn phương chấm dứt Hợp đồng không vì những lý do nêu trên thì phải báo trước cho bên kia ít nhất 01 tháng (30 ngày).<br/>
-            </p>
-            <p>
-              <b>ĐIỀU 6: CAM KẾT CỦA CÁC BÊN</b><br/>
-              Hai bên cùng cam kết thực hiện đúng các nội dung đã ký. Trong quá trình thực hiện thấy vấn đề cần thỏa thuận thì hai bên có thể lập thêm phụ lục Hợp đồng. Nội dung phụ lục có giá trị pháp lý như Hợp đồng chính;
-            </p>
-            <div class="sign">
-              <div class="side">
-                <p><b>BÊN CHO THUÊ PHÒNG TRỌ</b></p>
-                <p class="signA"><b>VƯƠNG BÁ QUANG</b></p>
-              </div>
-              <div class="side">
-                 <p><b>BÊN THUÊ PHÒNG TRỌ</b></p>
+          <div class="page2">
+            <div class="decoration-header">
+              <img src="./asset/header.jpg" alt="Header Image">
+            </div>
+            <div class="content">
+              <p class="danger"><b>ĐIỀU 3: THỜI HẠN CHO THUÊ 12THÁNG (Kỳ đóng 3T). Bắt đầu ngày: <span>{{ contract.DateInFormat }}</span> đến…</b></p>
+              <p>
+                <b>ĐIỀU 4: QUYỀN VÀ NGHĨA VỤ CỦA CÁC BÊN</b> <br/>
+                4.1 Bên A: <br/>
+                - Giao phòng trọ và các trang thiết bị gắn liền với phòng trọ cho Bên B theo đúng Hợp đồng;<br/>
+                -	Bảo đảm cho Bên B sử dụng ổn định phòng ở trong thời gian thuê;<br/>
+                -	Yêu cầu Bên B trả đủ tiền thuê, đúng kỳ hạn như đã thỏa thuận và có trách nhiệm trong việc sửa chữa phần hư hỏng, bồi thường thiệt hại do lỗi của Bên B gây ra;<br/>
+                -	Bảo trì, cải tạo khi phòng trọ hư hỏng nặng xảy ra;<br/>
+                4.2	Bên B: <br/>
+                -	Sử dụng phòng trọ đúng mục đích; Nam và nữ không thuê chung một phòng;<br/>
+                -	Thanh toán tiền thuê phòng, tiền điện, tiền nước, Internet, tiền vệ sinh đúng thời hạn;<br/>
+                -	Bảo quản các trang thiết bị và cơ sở vật chất của Bên A trang bị cho Bên B lúc nhận phòng trọ (làm hỏng phải sửa, mất phải đền);<br/>
+                -	Không được tự ý sửa chữa, cải tạo cơ sở vật chất khi chưa được sự đồng ý của Bên A;<br/>
+                -	Chấp hành các Quy định về giữ gìn vệ sinh chung, về môi trường và an ninh trật tự trong khu vực cư trú; Và nội quy chung của KTX Nhà Ông Bà;<br/>
+                -	Không để đồ cá nhân ở hành lang, lối đi, không gian chung của KTX Nhà Ông Bà.<br/>
+                -	Nếu Bên B cho khách ở lại qua đêm thì phải báo và được sự đồng ý của chủ nhà, đồng thời phải chịu trách nhiệm về các hành vi vi phạm pháp luật của khách trong thời gian ở lại.<br/>
+                -	Khi Bên B chấm dứt Hợp đồng phải bàn giao lại đầy đủ đồ đạc, trang thiết bị nội thất và dọn vệ sinh của phòng trọ cho Bên A như ban đầu. Chi phí hỏng phải sửa tùy vào thỏa thuận. Chi phí mất, hỏng: chìa khóa phòng 30k/chìa, chìa khóa tủ 50k/bộ, thẻ từ thang máy 100k/cái, thẻ xe 100k/cái, điều khiển điều hòa 500k/cái, dọn vệ sinh phòng 250k,…<br/>
+              </p>
+              <p>
+                <b>ĐIỀU 5: CHẤM DỨT HỢP ĐỒNG</b><br/>
+                Chấm dứt Hợp đồng được thực hiện trong các trường hợp sau:<br/>
+                -	Hợp đồng hết thời hạn giá trị;<br/>
+                -	Nhà bị tịch thu, phá dỡ theo quyết định của cơ quan nhà nước có thẩm quyền phê duyệt;<br/>
+                -	Nếu một trong hai bên đơn phương chấm dứt Hợp đồng không vì những lý do nêu trên thì phải báo trước cho bên kia ít nhất 01 tháng (30 ngày).<br/>
+              </p>
+              <p>
+                <b>ĐIỀU 6: CAM KẾT CỦA CÁC BÊN</b><br/>
+                Hai bên cùng cam kết thực hiện đúng các nội dung đã ký. Trong quá trình thực hiện thấy vấn đề cần thỏa thuận thì hai bên có thể lập thêm phụ lục Hợp đồng. Nội dung phụ lục có giá trị pháp lý như Hợp đồng chính;
+              </p>
+              <div class="sign">
+                <div class="side">
+                  <p><b>BÊN CHO THUÊ PHÒNG TRỌ</b></p>
+                  <p class="signA"><b>VƯƠNG BÁ QUANG</b></p>
+                </div>
+                <div class="side">
+                  <p><b>BÊN THUÊ PHÒNG TRỌ</b></p>
+                </div>
               </div>
             </div>
-
-            
+            <div class="decoration-footer">
+              <img src="./asset/footer.jpg" alt="Footer Image">
+            </div>
           </div>
         </div>
 

@@ -11,14 +11,8 @@ body {
 
 }
 
-.container {
-  margin-top: 100px;
-  margin-bottom: 80px;
-}
-
-
 p {
-  font-size: 12px;
+  font-size: 14px;
   letter-spacing: 1px;
 }
 
@@ -26,26 +20,27 @@ p {
   color: red;
 }
 
-.container {
-   padding: 5px 10px 5px 10px;
-}
-
 .title-contract {
   text-align: center;
 }
 
+.content {
+  margin: 40px 90px 20px 100px;
+}
+
 .header {
-  font-size: 14px;
+  font-size: 16px;
   margin-top: 5px;
   font-weight: bold;
 }
 
 .subheader {
-  font-size: 13px;
+  font-size: 15px;
   font-style: italic;
   margin-top: 3px;
 }
 
+/*
 .content {
   margin-top: 20px;
   height: auto;
@@ -53,6 +48,7 @@ p {
   padding-right: 75px;
   width: 100%;
 }
+*/
 
 .content .underline {
   text-decoration: underline;
@@ -64,10 +60,26 @@ p {
   justify-content: space-between;
 }
 
-
 .signA {
   margin-top: 80px;
   text-align: center;
+}
+
+.decoration-header {
+  width: 100%;
+  height: 115px; /* Có thể thay đổi chiều cao tùy ý */
+  overflow: hidden;
+  display: none;
+}
+
+.decoration-footer {
+  display:none;
+}
+
+.decoration-header img,  .decoration-footer img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 @media print {
@@ -79,26 +91,25 @@ p {
     size: A4;
     margin: 1cm;
   }
+  
+  .decoration-header {
+    display: inline;
+  }
 
-  span.page1 {
+  div.page1, div.page2 {
+    position: relative;
+  }
+  
+  .decoration-footer {
+    display: inline;
+    position:absolute;
+    top: 1020px;
+  }
+
+  div.page1, div.page2 {
     page-break-before: always;
     display: block; 
   }
-
-  span.page2 {
-    page-break-before: always;
-    display: block; 
-  }
-
-  span.page1 {
-    margin-top: 50px;
-    margin-bottom: 50px;
-  }
-  span.page2 {
-    margin-top: 180px;
-    margin-bottom: 50px;
-  }
-
 }
 
 div.print {
