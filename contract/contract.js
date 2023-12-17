@@ -8,10 +8,7 @@ function ready(fn) {
   
 function addDemo(row) {
   if (!row.Room) {
-    for (const key of ['Contract']) {
-      if (!row[key]) { row[key] = '     '; }
-    }
-    for (const key of ['DateInText', 'SideA', 'SideB', 'Room', 'RoomHandover', 'RoomPriceText', 'ItemFee', 'AccountBank', 'DateInFormat']) {
+    for (const key of ['DateInText', 'SideA', 'NameBirthB', 'IdentificationB', 'HometownB', 'ContactPhoneB', 'SchoolSocial', 'Room', 'RoomHandover', 'RoomPriceText', 'ItemFee', 'AccountBank', 'DateInFormat']) {
       if (!(key in row)) { row[key] = key; }
     }
   }
