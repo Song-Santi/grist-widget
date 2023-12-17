@@ -40,15 +40,9 @@ p {
   margin-top: 3px;
 }
 
-/*
-.content {
+.main-page1 {
   margin-top: 20px;
-  height: auto;
-  padding-left: 75px;
-  padding-right: 75px;
-  width: 100%;
 }
-*/
 
 .content .underline {
   text-decoration: underline;
@@ -98,6 +92,10 @@ p {
 
   div.page1, div.page2 {
     position: relative;
+  }
+
+  .main-page1 {
+    margin-top: 35px;
   }
   
   .decoration-footer {
